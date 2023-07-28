@@ -1,9 +1,17 @@
 version: '3.8'
 
 services:
+ mongo:
+  image: mongo:4.2.8
+  ports:
+   - 27017:27017
+  volumes:
+   - mongodb:/data/db
+   - mongodb-config:/data/configdb
  notes:
   build:
    context: .
+   dockerfile: ./Dockerfile
   ports:
    - 8000:8000
    - 9229:9229
@@ -13,15 +21,8 @@ services:
   volumes:
    - ./:/app
    - /app/node_modules
-  command: npm run debug
+  # command: npm run debug
 
- mongo:
-  image: mongo:4.2.8
-  ports:
-   - 27017:27017
-  volumes:
-   - mongodb:/data/db
-   - mongodb-config:/data/configdb
 volumes:
  mongodb:
  mongodb-config:

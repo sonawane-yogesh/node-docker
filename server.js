@@ -7,10 +7,10 @@ server.use('/', mocks.server(server.Router(), false, true));
 
 async function main() {
     try {
-        let connString = process.env.CONNECTION_STRING || "mongodb+srv://yogeshs:yogeshs@dotnet-cluster.ttt9rr4.mongodb.net/notes?retryWrites=true&w=majority";
+        let connString = process.env.CONNECTION_STRING;
         console.log(connString);
         await database.connect(connString);
-        let port = process.env.SERVER_PORT || 8000;
+        let port = process.env.SERVER_PORT;
         console.log(port);
         const server = ronin.server({ port });
         server.use('/foo', (req, res) => {
