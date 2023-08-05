@@ -6,8 +6,9 @@ COPY ["package.json", "./"]
 ENV CONNECTION_STRING=''
 ENV SERVER_PORT=8000
 RUN npm install --omit=dev
-# RUN --network=host
 COPY . .
 EXPOSE 8000
-EXPOSE 9229
-CMD ["npm", "run", "debug"]
+CMD ["npm", "start"]
+# If need to start server using nodemon
+# EXPOSE 9229
+# CMD ["npm", "run", "debug"]

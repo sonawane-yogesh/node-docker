@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node server.js",
     "debug": "nodemon --inspect-brk --inspect=0.0.0.0:9229 -L server.js"
   },
   "keywords": [],
