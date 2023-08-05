@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-docker-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: node-docker
+  template:
+    metadata:
+      labels:
+        app: node-docker
+    spec:
+      containers:
+        - name: node-docker
+          image: node:18-alpine
+          ports:
+            - containerPort: 80
