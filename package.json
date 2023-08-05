@@ -1,7 +1,6 @@
 {
   "name": "docker",
   "version": "1.0.0",
-  "kind": "Service",
   "description": "",
   "main": "index.js",
   "scripts": {
